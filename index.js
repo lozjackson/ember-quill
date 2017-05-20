@@ -18,8 +18,32 @@ module.exports = {
             ],
           };
         }
+      },
+      'quill-image-drop-module': function() {
+        if (process.env.EMBER_CLI_FASTBOOT) {
+          return {};
+        }
+        else {
+          return {
+            import: [
+              'image-drop.min.js',
+            ],
+          };
+        }
+      },
+      'quill-image-resize-module': function() {
+        if (process.env.EMBER_CLI_FASTBOOT) {
+          return {};
+        }
+        else {
+          return {
+            import: [
+              'image-resize.min.js',
+            ],
+          };
+        }
       }
-    } 
+    }
   },
   isDevelopingAddon: function() {
     return true;
